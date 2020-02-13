@@ -31,7 +31,7 @@ var ForgeXLS = {
     forgeGetRequest: function (url, token, callback) {
       console.log(url);
       jQuery.ajax({
-        url: url + '?forceget:true',
+        url: url + '?forceget=true',
         beforeSend: function (request) {
           request.setRequestHeader('Authorization', 'Bearer ' + token);
         },
