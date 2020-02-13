@@ -29,6 +29,7 @@ var ForgeXLS = {
     },
 
     forgeGetRequest: function (url, token, callback) {
+      console.log(url);
       jQuery.ajax({
         url: url,
         beforeSend: function (request) {
