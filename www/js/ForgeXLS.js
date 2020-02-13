@@ -57,7 +57,7 @@ var ForgeXLS = {
       this.forgeGetRequest(this.Constants.BASE_URL + this.Constants.MODEL_DERIVATIVE_V2(urn) + urn + '/metadata/' + guid, token, callback);
     },
 
-    getProperties: function (urn, guid, {'forceget': true}, token, callback) {
+    getProperties: function (urn, guid, token, callback) {
       console.log('Downloading properties...');
       this.forgeGetRequest(this.Constants.BASE_URL + this.Constants.MODEL_DERIVATIVE_V2(urn) + urn + '/metadata/' + guid + '/properties', token, callback);
     }
