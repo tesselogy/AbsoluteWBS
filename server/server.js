@@ -20,7 +20,7 @@
 var express = require('express');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
-var cors = require('cors')
+var cors = require('cors');
 var app = express();
 //prepare for iframe use
 app.use(cors());
