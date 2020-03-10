@@ -12,7 +12,8 @@
     "jquery": "3.3.1",
     "jstree": "3.3.7",
     "moment": "2.22.2",
-    "request": "^2.81.0"
+    "request": "^2.81.0",
+    "cors":"^2.8.5"
   },
   "repository": {
     "type": "git",
