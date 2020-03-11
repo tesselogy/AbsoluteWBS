@@ -80,7 +80,7 @@ var ForgeXLS = {
       var wb = new Workbook();
       jQuery.each(tables, function (name, table) {
         //if (name.indexOf('<') == -1) { // skip tables starting with < UPD skip this rule
-          var consoletext = name + " - " + table;
+          var consoletext = name + " - " + JSON.stringify(table);
           console.log(consoletext);
           var ws = ForgeXLS.sheetFromTable(table);
           wb.SheetNames.push(name);
