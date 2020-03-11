@@ -79,10 +79,22 @@ var ForgeXLS = {
 
       var wb = new Workbook();
       jQuery.each(tables, function (name, table) {
-        //if (name.indexOf('<') == -1) { // skip tables starting with < UPD skip this rule
-          var consoletext = name + " - " + JSON.stringify(table);
+        //if (name.indexOf('<') == -1) { // skip tables starting with < UPD skip this rule and starting govnocod method
+        var tableClear = [];
+        table.forEach(function(d,i){
+          tableClear.push({
+              'Размеры:Длина': d.Размеры:Длина,
+              'Размеры:Объем':d.Размеры:Объем,
+              'Размеры:Площадь':d.Размеры:Площадь,
+              'Идентификация:Код по классификатору':d.Идентификация:Код по классификатору,
+              'Viewer ID':d.Viewer ID,
+              'Revit ID':d.Revit ID,
+              'Идентификация:Имя типа':d.Идентификация:Имя типа
+          });
+        })
+        var consoletext = name + " - " + JSON.stringify(tableClear);
           console.log(consoletext);
-          var ws = ForgeXLS.sheetFromTable(table);
+          var ws = ForgeXLS.sheetFromTable(tableClear);
           wb.SheetNames.push(name);
           wb.Sheets[name] = ws;
         //}
