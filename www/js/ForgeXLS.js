@@ -79,11 +79,13 @@ var ForgeXLS = {
 
       var wb = new Workbook();
       jQuery.each(tables, function (name, table) {
-        if (name.indexOf('<') == -1) { // skip tables starting with <
+        //if (name.indexOf('<') == -1) { // skip tables starting with < UPD skip this rule
+          var consoletext = name + " - " + table;
+          console.log(consoletext);
           var ws = ForgeXLS.sheetFromTable(table);
           wb.SheetNames.push(name);
           wb.Sheets[name] = ws;
-        }
+        //}
       });
 
       var wbout = XLSX.write(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
