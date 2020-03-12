@@ -79,7 +79,10 @@ var ForgeXLS = {
 
       var wb = new Workbook();
       jQuery.each(tables, function (name, table) {
-        //if (name.indexOf('<') == -1) { // skip tables starting with < UPD skip this rule and starting govnocod method
+        if (name.indexOf('<') != -1) { //if tables name in <, do cut. But if this name only just <> - replace name to random
+          var str = name.lenght;
+          if (str>2) {name.slice(1,str)} else {name = ABS + Math.floor((Math.random() * 100) + 1);}
+        }
         var tableClear = [];
         table.forEach(function(d,i){
           tableClear.push({
@@ -98,7 +101,6 @@ var ForgeXLS = {
           var ws = ForgeXLS.sheetFromTable(tableClear);
           wb.SheetNames.push(name);
           wb.Sheets[name] = ws;
-        //}
       });
 
       var wbout = XLSX.write(wb, { bookType: 'xlsx', bookSST: true, type: 'binary' });
