@@ -81,7 +81,7 @@ var ForgeXLS = {
       jQuery.each(tables, function (name, table) {
         if (name.indexOf('<') != -1) { //if tables name in <, do cut. But if this name only just <> - replace name to random
           var str = name.lenght;
-          if (str>2) {name.slice(1,str)} else {name = ABS + Math.floor((Math.random() * 100) + 1);}
+          if (str>2) {name.slice(1,str)} else {name = 'ABSLT' + Math.floor((Math.random() * 100) + 1);}
         }
         var tableClear = [];
         table.forEach(function(d,i){
