@@ -79,10 +79,10 @@ var ForgeXLS = {
 
       var wb = new Workbook();
       jQuery.each(tables, function (name, table) {
+        var str = name.lenght;
         if (name.indexOf('<') != -1) { //if tables name in <, do cut. But if this name only just <> - replace name to random
-          var str = name.lenght;
           console.log(str);
-          if (str>=3) {name.slice(1,str)} else {name = 'ABSLT' + Math.floor((Math.random() * 100) + 1);}
+          if (str>=3) {name.slice(1,str-1)} else {name = 'ABSLT' + Math.floor((Math.random() * 100) + 1);}
         }
         var tableClear = [];
         table.forEach(function(d,i){
